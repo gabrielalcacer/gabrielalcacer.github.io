@@ -3,612 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiniela Mundial 2026</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css">
+<title>Gabriel Alcacer — 3D Artist & Video Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#fff;--bg2:#f5f5f5;--text:#111;--text2:#555;--text3:#999;--border:rgba(0,0,0,0.12);--border2:rgba(0,0,0,0.22);--s-bg:#eaf3de;--s-t:#3b6d11;--w-bg:#faeeda;--w-t:#854f0b;--i-bg:#e6f1fb;--i-t:#185fa5;--d-bg:#fcebeb;--d-t:#a32d2d;--r:8px;--rl:12px}
-@media(prefers-color-scheme:dark){:root{--bg:#1a1a1a;--bg2:#242424;--text:#f0f0f0;--text2:#aaa;--text3:#666;--border:rgba(255,255,255,0.1);--border2:rgba(255,255,255,0.2);--s-bg:#173404;--s-t:#c0dd97;--w-bg:#412402;--w-t:#fac775;--i-bg:#042c53;--i-t:#b5d4f4;--d-bg:#501313;--d-t:#f7c1c1}}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;color:var(--text);background:var(--bg);min-height:100vh}
-.app{max-width:640px;margin:0 auto}
-.view{display:none}.view.active{display:block}
-.inner{padding:1rem}
-.tabs{display:flex;border-bottom:1px solid var(--border);overflow-x:auto;margin-bottom:1.5rem}
-.tab{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text2);border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
-.tab.active{color:var(--text);border-bottom:2px solid var(--text);font-weight:500}
-h3{font-size:15px;font-weight:500;margin-bottom:.75rem}
-.card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1rem 1.25rem;margin-bottom:1rem}
-.badge{display:inline-block;padding:2px 8px;border-radius:var(--r);font-size:11px;font-weight:500}
-.bs{background:var(--s-bg);color:var(--s-t)}.bw{background:var(--w-bg);color:var(--w-t)}.bi{background:var(--i-bg);color:var(--i-t)}.bd{background:var(--d-bg);color:var(--d-t)}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.25rem}
-.metric{background:var(--bg2);border-radius:var(--r);padding:.85rem;text-align:center}
-.metric .num{font-size:26px;font-weight:500}.metric .lbl{font-size:11px;color:var(--text2);margin-bottom:4px}
-input,select{width:100%;padding:8px 10px;border:0.5px solid var(--border2);border-radius:var(--r);font-size:13px;background:var(--bg);color:var(--text);height:36px}
-input:focus,select:focus{outline:none}
-button{cursor:pointer;padding:8px 16px;border:0.5px solid var(--border2);border-radius:var(--r);background:transparent;color:var(--text);font-size:13px}
-button:hover{background:var(--bg2)}
-button.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
-.btn-sm{padding:5px 10px;font-size:12px}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;padding:8px 10px;font-weight:500;color:var(--text2);border-bottom:0.5px solid var(--border);font-size:12px}
-td{padding:8px 10px;border-bottom:0.5px solid var(--border)}
-tr:last-child td{border-bottom:none}
-hr{border:none;border-top:0.5px solid var(--border);margin:1.25rem 0}
-.flex1{flex:1}
-.muted{color:var(--text2);font-size:12px}
-.av{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;background:var(--i-bg);color:var(--i-t);flex-shrink:0}
-.gl{font-size:11px;font-weight:500;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin:1rem 0 .5rem}
-.mc{background:var(--bg2);border-radius:var(--r);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.mt{flex:1;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mt.r{text-align:right}
-.sbadge{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--r);padding:3px 8px;font-size:12px;min-width:48px;text-align:center;flex-shrink:0}
-input[type=number].si{width:50px;text-align:center;flex-shrink:0;height:34px}
-.rg .rn{color:#B8860B}.rs .rn{color:#808080}.rbr .rn{color:#A0522D}
-.rn{font-size:17px;font-weight:500;width:26px;text-align:center;flex-shrink:0}
-#mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:1rem}
-#mo.open{display:flex}
-#mb{background:var(--bg);border-radius:var(--rl);padding:1.5rem;width:100%;max-width:340px;border:0.5px solid var(--border)}
-#toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:8px 18px;border-radius:var(--r);font-size:13px;display:none;z-index:200}
-.sp{display:inline-block;width:14px;height:14px;border:2px solid var(--border2);border-top-color:var(--text);border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.hero-wrap{position:relative;background:#0a1628}
-.hero-img{width:100%;height:auto;display:block}
-.hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.75));padding:1.5rem 1rem 1rem}
-.hero-overlay h1{color:#fff;font-size:22px;font-weight:700;margin-bottom:2px}
-.hero-overlay p{color:#f5e94a;font-size:13px}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #0c0f0e; --surface: #131816; --surface2: #1a1f1d; --teal: #2dcca7; --teal-dim: #1a7a64; --text: #e8ede9; --text-muted: #7a8f88; --text-dim: #4a5e57; --border: rgba(45,204,167,0.12); }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 3rem; background: rgba(12,15,14,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--teal); letter-spacing: 0.04em; text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 3rem 4rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 700px; height: 700px; background: radial-gradient(ellipse at center, rgba(45,204,167,0.06) 0%, transparent 65%); pointer-events: none; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: center; }
+  .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--teal); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1.5rem; }
+  h1 em { font-style: italic; color: var(--teal); }
+  .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn-primary { background: var(--teal); color: #0c0f0e; }
+  .btn-primary:hover { background: #3de0b9; }
+  .btn-ghost { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+  .hero-stats { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .stat-item { background: var(--surface); padding: 1.5rem 1.75rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .stat-number { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--teal); line-height: 1; }
+  .stat-label { font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; text-align: right; line-height: 1.3; max-width: 140px; }
+  section { padding: 6rem 3rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--teal); }
+  h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.15; margin-bottom: 3rem; color: var(--text); }
+  #reels { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .reels-tabs { display: flex; gap: 0; margin-bottom: 2rem; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; width: fit-content; }
+  .tab-btn { padding: 0.65rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; color: var(--text-muted); border: none; cursor: pointer; transition: all 0.2s; }
+  .tab-btn.active { background: var(--teal); color: #0c0f0e; }
+  .tab-btn:hover:not(.active) { color: var(--teal); }
+  .reel-panel { display: none; }
+  .reel-panel.active { display: block; }
+  .reel-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 4px; overflow: hidden; background: #000; }
+  .reel-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .reel-desc { margin-top: 1rem; font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.05em; }
+  #trabajos { background: var(--bg); }
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .work-item { background: var(--surface); overflow: hidden; transition: background 0.2s; }
+  .work-item:hover { background: var(--surface2); }
+  .work-thumb { position: relative; padding-bottom: 56.25%; background: #111; }
+  .work-thumb iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; }
+  .work-info { padding: 1rem 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+  .work-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.3rem; }
+  .work-title { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+  #sobre-mi { background: var(--surface); border-top: 1px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-text p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.25rem; line-height: 1.85; }
+  .skills-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .skill-group-title { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .skill-list { list-style: none; }
+  .skill-list li { font-size: 0.88rem; color: var(--text-muted); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; gap: 0.5rem; }
+  .skill-list li::before { content: ''; width: 4px; height: 4px; background: var(--teal-dim); border-radius: 50%; flex-shrink: 0; }
+  #experiencia { background: var(--bg); }
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  .exp-item:first-child { border-top: 1px solid var(--border); }
+  .exp-period { font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.05em; padding-top: 0.15rem; }
+  .exp-role { font-weight: 500; font-size: 1rem; margin-bottom: 0.2rem; }
+  .exp-company { color: var(--teal); font-size: 0.88rem; margin-bottom: 0.75rem; }
+  .exp-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+  #contacto { background: var(--surface); border-top: 1px solid var(--border); text-align: center; }
+  #contacto h2 { margin-bottom: 0.75rem; }
+  #contacto .sub { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  footer { padding: 2rem 3rem; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; letter-spacing: 0.06em; }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+    .hero { padding: 5rem 1.5rem 3rem; } .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    section { padding: 4rem 1.5rem; } .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
 </style>
 </head>
 <body>
-<div class="app" id="app">
-
-<!-- LOGIN -->
-<div id="login-screen" class="view active">
-  <div class="hero-wrap">
-    <img src="hero.png" class="hero-img" alt="Quiniela Mundial 2026">
-    <div class="hero-overlay">
-      <h1>⚽ Quiniela Mundial 2026</h1>
-      <p>EE.UU. · México · Canadá — 11 jun al 19 jul</p>
-    </div>
-  </div>
-  <div class="inner">
-    <div class="card">
-      <div style="margin-bottom:1rem">
-        <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:6px">Tu nombre</label>
-        <select id="login-select"><option value="">Selecciona...</option></select>
-      </div>
-      <div style="margin-bottom:1rem">
-        <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:6px">¿Eres el admin?</label>
-        <input type="password" id="admin-pw" placeholder="Contraseña admin (opcional)" style="width:100%">
-      </div>
-      <button class="primary" style="width:100%;height:40px;font-size:14px" onclick="doLogin()">Entrar →</button>
-      <hr>
-      <p style="font-size:11px;color:var(--text3);text-align:center">Pin del admin: <strong>2026</strong></p>
-    </div>
-    <p id="lmsg" style="text-align:center;color:var(--text2);font-size:13px"><span class="sp"></span>Cargando participantes...</p>
-  </div>
-</div>
-
-<!-- PLAYER VIEW -->
-<div id="player-view" class="view">
-  <div class="inner">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem">
-      <div class="av" id="pv-av">--</div>
-      <div><div style="font-weight:500" id="pv-name">-</div><div class="muted">Mis pronósticos</div></div>
-      <div style="margin-left:auto"><button class="btn-sm" onclick="logout()">Salir</button></div>
-    </div>
-    <div class="grid2">
-      <div class="metric"><div class="lbl">Puntos</div><div class="num" id="pv-pts">0</div></div>
-      <div class="metric"><div class="lbl">Exactos</div><div class="num" id="pv-exact">0</div></div>
-      <div class="metric"><div class="lbl">Ganadores</div><div class="num" id="pv-win">0</div></div>
-      <div class="metric"><div class="lbl">Posición</div><div class="num" id="pv-rank">#-</div></div>
-    </div>
-    <div class="tabs">
-      <button class="tab active" onclick="pvTab(this,'pv-picks')">Mis picks</button>
-      <button class="tab" onclick="pvTab(this,'pv-ranking')">Ranking</button>
-      <button class="tab" onclick="pvTab(this,'pv-special')">Especiales</button>
-    </div>
-    <div id="pv-picks" class="pvp"><div id="pv-ml"></div></div>
-    <div id="pv-ranking" class="pvp" style="display:none"><div id="pv-rl"></div></div>
-    <div id="pv-special" class="pvp" style="display:none">
-      <div class="card">
-        <h3>Pronósticos especiales</h3>
-        <div style="margin-bottom:1rem">
-          <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:6px">🏆 Campeón del mundial <span class="badge bw">+5 pts</span></label>
-          <select id="pv-champ" style="width:100%"><option value="">Sin pronosticar</option></select>
-        </div>
-        <div style="margin-bottom:1rem">
-          <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:6px">⚽ Goleador del torneo <span class="badge bi">+3 pts</span></label>
-          <input type="text" id="pv-scorer" placeholder="Nombre del jugador" style="width:100%">
-        </div>
-        <button class="primary" onclick="saveSpecial()">Guardar especiales</button>
-      </div>
-      <div class="card" id="pv-sr" style="display:none"><h3>Resultado especiales</h3><div id="pv-srb"></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ADMIN VIEW -->
-<div id="admin-view" class="view">
-  <div class="inner">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem">
-      <div class="av" style="background:var(--d-bg);color:var(--d-t)">AD</div>
-      <div><div style="font-weight:500">Panel de administrador</div><div class="muted">Gestiona resultados y participantes</div></div>
-      <div style="margin-left:auto"><button class="btn-sm" onclick="logout()">Salir</button></div>
-    </div>
-    <div class="tabs">
-      <button class="tab active" onclick="adminTab(this,'ad-res')">Resultados</button>
-      <button class="tab" onclick="adminTab(this,'ad-pl')">Participantes</button>
-      <button class="tab" onclick="adminTab(this,'ad-sp')">Especiales</button>
-      <button class="tab" onclick="adminTab(this,'ad-rk')">Ranking</button>
-    </div>
-    <div id="ad-res" class="adp">
-      <p class="muted" style="margin-bottom:1rem">Introduce el marcador y pulsa <strong>OK</strong> para confirmar.</p>
-      <div id="ad-ml"></div>
-    </div>
-    <div id="ad-pl" class="adp" style="display:none">
-      <div class="card"><h3>Añadir participante</h3>
-        <div style="display:flex;gap:8px">
-          <input type="text" id="np" placeholder="Nombre" class="flex1" onkeydown="if(event.key==='Enter')addPlayer()">
-          <button class="primary" onclick="addPlayer()"><i class="ti ti-plus"></i> Añadir</button>
-        </div>
-      </div>
-      <div class="card"><h3>Participantes</h3><div id="pl-list"></div></div>
-    </div>
-    <div id="ad-sp" class="adp" style="display:none">
-      <div class="card"><h3>Resultados reales finales</h3>
-        <div style="margin-bottom:1rem">
-          <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:6px">🏆 Campeón real</label>
-          <select id="ad-rc" style="width:100%"><option value="">Sin definir</option></select>
-        </div>
-        <div style="margin-bottom:1rem">
-          <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:6px">⚽ Goleador real</label>
-          <input type="text" id="ad-rs" placeholder="Nombre del jugador" style="width:100%">
-        </div>
-        <button class="primary" onclick="saveRealSpecial()">Guardar</button>
+<nav>
+  <a class="nav-logo" href="#">GA</a>
+  <ul class="nav-links">
+    <li><a href="#reels">Reels</a></li>
+    <li><a href="#trabajos">Trabajos</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Madrid, España</p>
+      <h1>Gabriel<br><em>Alcacer</em></h1>
+      <p class="hero-desc">Realizador Audiovisual con más de 5 años de experiencia.<br>Especializado en fusionar la <strong style="font-weight:500;color:var(--text)">narrativa cinematográfica</strong> con la animación 3D en Blender.</p>
+      <div class="btn-group">
+        <a href="#reels" class="btn btn-primary">Ver Reels</a>
+        <a href="https://gabrielalcacer.github.io/CV_Gabriel_Alcacer.pdf" class="btn btn-ghost" download>Descargar CV</a>
       </div>
     </div>
-    <div id="ad-rk" class="adp" style="display:none"><div id="ad-rkl"></div></div>
-  </div>
-</div>
-
-</div>
-
-<div id="mo" onclick="if(event.target===this)closePick()">
-  <div id="mb">
-    <h3 id="mo-t" style="margin-bottom:1rem">Pronóstico</h3>
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.25rem">
-      <div style="flex:1;text-align:right;font-size:13px" id="mo-h">-</div>
-      <input type="number" min="0" max="20" id="pm-h" class="si">
-      <span style="color:var(--text3)">-</span>
-      <input type="number" min="0" max="20" id="pm-a" class="si">
-      <div style="flex:1;font-size:13px" id="mo-a">-</div>
-    </div>
-    <div style="display:flex;gap:8px;justify-content:flex-end">
-      <button onclick="closePick()">Cancelar</button>
-      <button class="primary" onclick="savePick()">Guardar</button>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-number">5+</span><span class="stat-label">años de experiencia audiovisual</span></div>
+      <div class="stat-item"><span class="stat-number">3D</span><span class="stat-label">Blender · Substance · Unreal</span></div>
+      <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Másters especializados en 3D</span></div>
+      <div class="stat-item"><span class="stat-number">∞</span><span class="stat-label">Historias por contar</span></div>
     </div>
   </div>
-</div>
-<div id="toast"></div>
+</section>
 
-<script type="module">
-import{initializeApp}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import{getFirestore,doc,getDoc,setDoc,onSnapshot,collection,getDocs,deleteDoc}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
-
-const fbApp=initializeApp({
-  apiKey:"AIzaSyB9APbkXsCqAkkXgA9DiVXNlvhy_8TcWTs",
-  authDomain:"quiniela-c4186.firebaseapp.com",
-  projectId:"quiniela-c4186",
-  storageBucket:"quiniela-c4186.firebasestorage.app",
-  messagingSenderId:"1069209810424",
-  appId:"1:1069209810424:web:6a6461c344e138d93c120d"
-});
-const db=getFirestore(fbApp);
-
-// Grupos reales - sorteo oficial 5 dic 2025
-const GROUPS={
-  A:['México','Sudáfrica','Corea del Sur','Rep. Checa'],
-  B:['Canadá','Bosnia-Herz.','Qatar','Suiza'],
-  C:['Brasil','Marruecos','Haití','Escocia'],
-  D:['EE.UU.','Paraguay','Australia','Turquía'],
-  E:['Alemania','Curazao','Costa de Marfil','Ecuador'],
-  F:['Países Bajos','Japón','Túnez','Suecia'],
-  G:['Bélgica','Egipto','Irán','Nueva Zelanda'],
-  H:['España','Cabo Verde','Arabia Saudita','Uruguay'],
-  I:['Francia','Senegal','Noruega','Irak'],
-  J:['Argentina','Argelia','Austria','Jordania'],
-  K:['Portugal','Colombia','Uzbekistán','R.D. Congo'],
-  L:['Inglaterra','Croacia','Ghana','Panamá']
-};
-const ALL_TEAMS=Object.values(GROUPS).flat();
-
-// Partidos de fase eliminatoria — se muestran con etiqueta de ronda
-// home/away usan etiqueta legible, no se filtran por longitud
-const KO_LABELS={
-  D1:'D16 P1',D2:'D16 P2',D3:'D16 P3',D4:'D16 P4',
-  D5:'D16 P5',D6:'D16 P6',D7:'D16 P7',D8:'D16 P8',
-  D9:'D16 P9',D10:'D16 P10',D11:'D16 P11',D12:'D16 P12',
-  D13:'D16 P13',D14:'D16 P14',D15:'D16 P15',D16:'D16 P16',
-  O1:'Oct P1',O2:'Oct P2',O3:'Oct P3',O4:'Oct P4',
-  O5:'Oct P5',O6:'Oct P6',O7:'Oct P7',O8:'Oct P8',
-  Q1:'Ctos P1',Q2:'Ctos P2',Q3:'Ctos P3',Q4:'Ctos P4',
-  S1:'Semi P1',S2:'Semi P2',
-  F1:'Final'
-};
-
-function makeMatches(){
-  const ms=[];let id=1;
-  for(const[g,teams]of Object.entries(GROUPS))
-    for(let i=0;i<teams.length;i++)
-      for(let j=i+1;j<teams.length;j++)
-        ms.push({id:'G'+id++,group:g,phase:'Grupos',home:teams[i],away:teams[j],homeGoals:'',awayGoals:'',played:false});
-
-  const ko=[
-    // Dieciseisavos (16 partidos)
-    {id:'D1',phase:'Dieciseisavos',home:'1º A',away:'2º B'},
-    {id:'D2',phase:'Dieciseisavos',home:'1º B',away:'2º A'},
-    {id:'D3',phase:'Dieciseisavos',home:'1º C',away:'2º D'},
-    {id:'D4',phase:'Dieciseisavos',home:'1º D',away:'2º C'},
-    {id:'D5',phase:'Dieciseisavos',home:'1º E',away:'2º F'},
-    {id:'D6',phase:'Dieciseisavos',home:'1º F',away:'2º E'},
-    {id:'D7',phase:'Dieciseisavos',home:'1º G',away:'2º H'},
-    {id:'D8',phase:'Dieciseisavos',home:'1º H',away:'2º G'},
-    {id:'D9',phase:'Dieciseisavos',home:'1º I',away:'2º J'},
-    {id:'D10',phase:'Dieciseisavos',home:'1º J',away:'2º I'},
-    {id:'D11',phase:'Dieciseisavos',home:'1º K',away:'2º L'},
-    {id:'D12',phase:'Dieciseisavos',home:'1º L',away:'2º K'},
-    {id:'D13',phase:'Dieciseisavos',home:'3º ABC',away:'3º DEF'},
-    {id:'D14',phase:'Dieciseisavos',home:'3º GHI',away:'3º JKL'},
-    {id:'D15',phase:'Dieciseisavos',home:'3º ABF',away:'3º CDG'},
-    {id:'D16',phase:'Dieciseisavos',home:'3º EHL',away:'3º IJK'},
-    // Octavos (8 partidos)
-    {id:'O1',phase:'Octavos',home:'Gan. D1',away:'Gan. D2'},
-    {id:'O2',phase:'Octavos',home:'Gan. D3',away:'Gan. D4'},
-    {id:'O3',phase:'Octavos',home:'Gan. D5',away:'Gan. D6'},
-    {id:'O4',phase:'Octavos',home:'Gan. D7',away:'Gan. D8'},
-    {id:'O5',phase:'Octavos',home:'Gan. D9',away:'Gan. D10'},
-    {id:'O6',phase:'Octavos',home:'Gan. D11',away:'Gan. D12'},
-    {id:'O7',phase:'Octavos',home:'Gan. D13',away:'Gan. D14'},
-    {id:'O8',phase:'Octavos',home:'Gan. D15',away:'Gan. D16'},
-    // Cuartos (4 partidos)
-    {id:'Q1',phase:'Cuartos',home:'Gan. O1',away:'Gan. O2'},
-    {id:'Q2',phase:'Cuartos',home:'Gan. O3',away:'Gan. O4'},
-    {id:'Q3',phase:'Cuartos',home:'Gan. O5',away:'Gan. O6'},
-    {id:'Q4',phase:'Cuartos',home:'Gan. O7',away:'Gan. O8'},
-    // Semis (2 partidos)
-    {id:'S1',phase:'Semis',home:'Gan. Q1',away:'Gan. Q2'},
-    {id:'S2',phase:'Semis',home:'Gan. Q3',away:'Gan. Q4'},
-    // Final (1 partido)
-    {id:'F1',phase:'Final',home:'Gan. S1',away:'Gan. S2'},
-  ];
-  return ms.concat(ko);
-}
-
-let STATE={players:{},matches:makeMatches(),realSpecial:{champion:'',scorer:''}};
-let currentUser=null,isAdmin=false,editingMatchId=null;
-let unsubs=[];
-
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',2200);}
-
-async function loadFromFirebase(){
-  try{
-    const ms=await getDoc(doc(db,'quiniela','matches'));
-    if(ms.exists())STATE.matches=ms.data().list;
-    const sp=await getDoc(doc(db,'quiniela','special'));
-    if(sp.exists())STATE.realSpecial=sp.data();
-    const ps=await getDocs(collection(db,'players'));
-    STATE.players={};
-    ps.forEach(d=>STATE.players[d.id]=d.data());
-    document.getElementById('lmsg').style.display='none';
-    populateSel();
-  }catch(e){
-    document.getElementById('lmsg').textContent='Error al cargar. Recarga la página.';
-    console.error(e);
-  }
-}
-
-function subscribeRT(){
-  unsubs.push(onSnapshot(doc(db,'quiniela','matches'),s=>{
-    if(s.exists())STATE.matches=s.data().list;
-    if(currentUser&&!isAdmin)renderPlayer();
-    if(isAdmin)renderAdminMatches();
-  }));
-  unsubs.push(onSnapshot(collection(db,'players'),s=>{
-    s.forEach(d=>STATE.players[d.id]=d.data());
-    populateSel();
-    if(currentUser&&!isAdmin)renderPlayer();
-    if(isAdmin){renderPlayersList();renderRanking('ad-rkl');}
-  }));
-  unsubs.push(onSnapshot(doc(db,'quiniela','special'),s=>{
-    if(s.exists())STATE.realSpecial=s.data();
-    if(currentUser&&!isAdmin)renderSpecialPlayer();
-  }));
-}
-
-async function saveMatches(){await setDoc(doc(db,'quiniela','matches'),{list:STATE.matches});}
-async function savePlayer(n){await setDoc(doc(db,'players',n),STATE.players[n]);}
-async function saveSpecialReal(){await setDoc(doc(db,'quiniela','special'),STATE.realSpecial);}
-
-window.doLogin=function(){
-  const sel=document.getElementById('login-select').value;
-  const pw=document.getElementById('admin-pw').value;
-  if(pw==='2026'){isAdmin=true;currentUser='admin';showView('admin-view');renderAdmin();subscribeRT();return;}
-  if(!sel){alert('Selecciona tu nombre');return;}
-  currentUser=sel;isAdmin=false;
-  if(!STATE.players[currentUser])STATE.players[currentUser]={picks:{},special:{champion:'',scorer:''}};
-  showView('player-view');renderPlayer();subscribeRT();
-};
-window.logout=function(){unsubs.forEach(u=>u());unsubs=[];currentUser=null;isAdmin=false;showView('login-screen');};
-function showView(v){document.querySelectorAll('#app>.view').forEach(e=>e.classList.remove('active'));document.getElementById(v).classList.add('active');}
-
-window.pvTab=function(btn,id){
-  btn.closest('#player-view').querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.pvp').forEach(p=>p.style.display='none');
-  document.getElementById(id).style.display='block';
-};
-window.adminTab=function(btn,id){
-  btn.closest('#admin-view').querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.adp').forEach(p=>p.style.display='none');
-  document.getElementById(id).style.display='block';
-};
-
-function calcPts(player){
-  const picks=STATE.players[player]?.picks||{};
-  let total=0,exact=0,winners=0;
-  STATE.matches.forEach(m=>{
-    if(!m.played)return;
-    const pick=picks[m.id];
-    if(!pick||pick.home===''||pick.away==='')return;
-    const rH=parseInt(m.homeGoals),rA=parseInt(m.awayGoals);
-    const pH=parseInt(pick.home),pA=parseInt(pick.away);
-    const rW=rH>rA?'h':rH<rA?'a':'d',pW=pH>pA?'h':pH<pA?'a':'d';
-    if(pick.home==m.homeGoals&&pick.away==m.awayGoals){total+=3;exact++;winners++;}
-    else if(rW===pW){total+=1;winners++;}
-  });
-  const sp=STATE.players[player]?.special||{};
-  if(STATE.realSpecial.champion&&sp.champion===STATE.realSpecial.champion)total+=5;
-  if(STATE.realSpecial.scorer&&sp.scorer&&sp.scorer.trim().toLowerCase()===STATE.realSpecial.scorer.trim().toLowerCase())total+=3;
-  return{total,exact,winners};
-}
-function getRanking(){return Object.keys(STATE.players).map(p=>({name:p,...calcPts(p)})).sort((a,b)=>b.total-a.total);}
-
-function renderPlayer(){
-  const pts=calcPts(currentUser);
-  document.getElementById('pv-name').textContent=currentUser;
-  document.getElementById('pv-av').textContent=currentUser.slice(0,2).toUpperCase();
-  document.getElementById('pv-pts').textContent=pts.total;
-  document.getElementById('pv-exact').textContent=pts.exact;
-  document.getElementById('pv-win').textContent=pts.winners;
-  const rank=getRanking().findIndex(r=>r.name===currentUser)+1;
-  document.getElementById('pv-rank').textContent='#'+rank;
-  renderPlayerMatches();renderRanking('pv-rl');renderSpecialPlayer();
-}
-
-function renderPlayerMatches(){
-  const picks=STATE.players[currentUser]?.picks||{};
-  const phases=['Grupos','Dieciseisavos','Octavos','Cuartos','Semis','Final'];
-  let html='';
-  phases.forEach(phase=>{
-    const ms=STATE.matches.filter(m=>m.phase===phase);
-    if(!ms.length)return;
-    if(phase==='Grupos'){
-      const grps={};
-      ms.forEach(m=>{if(!grps[m.group])grps[m.group]=[];grps[m.group].push(m);});
-      Object.entries(grps).forEach(([g,gms])=>{
-        html+=`<div class="gl">Grupo ${g}</div>`;
-        gms.forEach(m=>html+=matchRow(m,picks));
-      });
-    }else{
-      html+=`<div class="gl">${phase}</div>`;
-      ms.forEach(m=>html+=matchRow(m,picks));
-    }
-  });
-  document.getElementById('pv-ml').innerHTML=html||'<p class="muted">Sin partidos.</p>';
-}
-
-function matchRow(m,picks){
-  const pick=picks[m.id]||{home:'',away:''};
-  let ptsHtml='';
-  if(m.played&&pick.home!==''&&pick.away!==''){
-    const rH=parseInt(m.homeGoals),rA=parseInt(m.awayGoals);
-    const pH=parseInt(pick.home),pA=parseInt(pick.away);
-    const rW=rH>rA?'h':rH<rA?'a':'d',pW=pH>pA?'h':pH<pA?'a':'d';
-    let pts=0,cls='bd';
-    if(pick.home==m.homeGoals&&pick.away==m.awayGoals){pts=3;cls='bs';}
-    else if(rW===pW){pts=1;cls='bw';}
-    ptsHtml=`<span class="badge ${cls}">${pts}p</span>`;
-  }
-  const res=m.played?`${m.homeGoals}-${m.awayGoals}`:'?-?';
-  const myPick=(pick.home!==''&&pick.away!=='')?`${pick.home}-${pick.away}`:'—';
-  const editBtn=!m.played?`<button class="btn-sm" onclick="openPickModal('${m.id}')"><i class="ti ti-edit"></i></button>`:'';
-  return`<div class="mc">
-    <div class="mt r">${m.home}</div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0">
-      <div class="sbadge">${res}</div>
-      <span style="font-size:10px;color:var(--text3)">pick:${myPick}</span>
+<section id="reels">
+  <div class="container">
+    <p class="section-label fade-in">Showreel</p>
+    <h2 class="fade-in">Reels</h2>
+    <div class="reels-tabs fade-in">
+      <button class="tab-btn active" onclick="switchTab('3d')">3D & Motion Graphics</button>
+      <button class="tab-btn" onclick="switchTab('av')">Audiovisual</button>
     </div>
-    <div class="mt">${m.away}</div>
-    ${ptsHtml}${editBtn}
-  </div>`;
-}
-
-window.openPickModal=function(id){
-  const m=STATE.matches.find(x=>x.id===id);
-  if(!m||m.played)return;
-  editingMatchId=id;
-  const pick=STATE.players[currentUser]?.picks?.[id]||{home:'',away:''};
-  document.getElementById('mo-t').textContent=`${m.home} vs ${m.away}`;
-  document.getElementById('mo-h').textContent=m.home;
-  document.getElementById('mo-a').textContent=m.away;
-  document.getElementById('pm-h').value=pick.home;
-  document.getElementById('pm-a').value=pick.away;
-  document.getElementById('mo').classList.add('open');
-  document.getElementById('pm-h').focus();
-};
-window.closePick=function(){document.getElementById('mo').classList.remove('open');editingMatchId=null;};
-window.savePick=async function(){
-  const h=document.getElementById('pm-h').value;
-  const a=document.getElementById('pm-a').value;
-  if(h===''||a===''){alert('Rellena ambos marcadores');return;}
-  if(!STATE.players[currentUser].picks)STATE.players[currentUser].picks={};
-  STATE.players[currentUser].picks[editingMatchId]={home:h,away:a};
-  await savePlayer(currentUser);
-  closePick();toast('Pick guardado ✓');renderPlayer();
-};
-
-function renderSpecialPlayer(){
-  const sp=STATE.players[currentUser]?.special||{};
-  const sel=document.getElementById('pv-champ');
-  if(sel.options.length<=1)ALL_TEAMS.forEach(t=>sel.add(new Option(t,t)));
-  sel.value=sp.champion||'';
-  document.getElementById('pv-scorer').value=sp.scorer||'';
-  if(STATE.realSpecial.champion||STATE.realSpecial.scorer){
-    document.getElementById('pv-sr').style.display='block';
-    let html='';
-    if(STATE.realSpecial.champion){
-      const ok=sp.champion===STATE.realSpecial.champion;
-      html+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="flex:1">Campeón: <strong>${STATE.realSpecial.champion}</strong></span><span class="badge ${ok?'bs':'bd'}">${ok?'+5pts':'✗'}</span></div>`;
-    }
-    if(STATE.realSpecial.scorer){
-      const ok=sp.scorer&&sp.scorer.trim().toLowerCase()===STATE.realSpecial.scorer.trim().toLowerCase();
-      html+=`<div style="display:flex;align-items:center;gap:8px"><span style="flex:1">Goleador: <strong>${STATE.realSpecial.scorer}</strong></span><span class="badge ${ok?'bs':'bd'}">${ok?'+3pts':'✗'}</span></div>`;
-    }
-    document.getElementById('pv-srb').innerHTML=html;
-  }
-}
-window.saveSpecial=async function(){
-  if(!STATE.players[currentUser])return;
-  if(!STATE.players[currentUser].special)STATE.players[currentUser].special={};
-  STATE.players[currentUser].special.champion=document.getElementById('pv-champ').value;
-  STATE.players[currentUser].special.scorer=document.getElementById('pv-scorer').value;
-  await savePlayer(currentUser);toast('Especiales guardados ✓');renderPlayer();
-};
-
-function renderRanking(containerId){
-  const ranking=getRanking();
-  const el=document.getElementById(containerId);
-  if(!ranking.length){el.innerHTML='<p class="muted">Sin participantes aún.</p>';return;}
-  let html='';
-  ranking.forEach((r,i)=>{
-    const cls=i===0?'rg':i===1?'rs':i===2?'rbr':'';
-    const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
-    html+=`<div class="mc ${cls}" style="margin-bottom:8px">
-      <span class="rn">${medal||'#'+(i+1)}</span>
-      <div class="av" style="font-size:11px">${r.name.slice(0,2).toUpperCase()}</div>
-      <span style="flex:1;font-size:13px">${r.name}</span>
-      <span style="font-size:11px;color:var(--text2);margin-right:6px">${r.exact}✓ ${r.winners}⚽</span>
-      <span class="badge bs" style="font-size:13px;font-weight:500">${r.total}pts</span>
-    </div>`;
-  });
-  el.innerHTML=html;
-}
-
-function renderAdmin(){
-  renderAdminMatches();renderPlayersList();renderRanking('ad-rkl');
-  const sel=document.getElementById('ad-rc');
-  if(sel.options.length<=1)ALL_TEAMS.forEach(t=>sel.add(new Option(t,t)));
-  sel.value=STATE.realSpecial.champion||'';
-  document.getElementById('ad-rs').value=STATE.realSpecial.scorer||'';
-}
-
-function renderAdminMatches(){
-  const phases=['Grupos','Dieciseisavos','Octavos','Cuartos','Semis','Final'];
-  let html='';
-  phases.forEach(phase=>{
-    const ms=STATE.matches.filter(m=>m.phase===phase);
-    if(!ms.length)return;
-    if(phase==='Grupos'){
-      const grps={};
-      ms.forEach(m=>{if(!grps[m.group])grps[m.group]=[];grps[m.group].push(m);});
-      Object.entries(grps).forEach(([g,gms])=>{
-        html+=`<div class="gl">Grupo ${g}</div>`;
-        gms.forEach(m=>html+=adminRow(m));
-      });
-    }else{
-      html+=`<div class="gl">${phase}</div>`;
-      ms.forEach(m=>html+=adminRow(m));
-    }
-  });
-  document.getElementById('ad-ml').innerHTML=html;
-}
-
-function adminRow(m){
-  return`<div style="background:var(--bg2);border-radius:var(--r);padding:10px 12px;margin-bottom:8px">
-    <div style="display:flex;align-items:center;gap:8px">
-      <div style="flex:1;font-size:12px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.home}</div>
-      <input type="number" min="0" max="20" id="ah-${m.id}" value="${m.homeGoals}" class="si" ${m.played?'disabled':''} oninput="updateResult('${m.id}')">
-      <span style="color:var(--text3);flex-shrink:0">-</span>
-      <input type="number" min="0" max="20" id="aa-${m.id}" value="${m.awayGoals}" class="si" ${m.played?'disabled':''} oninput="updateResult('${m.id}')">
-      <div style="flex:1;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.away}</div>
-      <button class="btn-sm ${m.played?'primary':''}" onclick="togglePlayed('${m.id}')">${m.played?'✓':'OK'}</button>
+    <div id="panel-3d" class="reel-panel active fade-in">
+      <div class="reel-wrapper">
+        <iframe src="https://www.youtube.com/embed/5S6wirKFT_s" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="reel-desc">Blender · Motion Graphics · Character Art · Environment · Lighting</p>
     </div>
-  </div>`;
+    <div id="panel-av" class="reel-panel fade-in">
+      <div class="reel-wrapper">
+        <iframe src="https://www.youtube.com/embed/x7fCFncXKSU" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="reel-desc">Dirección · Edición · Postproducción · Spots · Cortometraje</p>
+    </div>
+  </div>
+</section>
+
+<section id="trabajos">
+  <div class="container">
+    <p class="section-label fade-in">Portfolio</p>
+    <h2 class="fade-in">Trabajos Destacados</h2>
+    <div class="works-grid">
+      <div class="work-item fade-in">
+        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/uCiACHimSWY" loading="lazy"></iframe></div>
+        <div class="work-info"><p class="work-tag">Animación 3D · Blender</p><p class="work-title">Animación de Personaje</p></div>
+      </div>
+      <div class="work-item fade-in">
+        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/Tcq2NvWVifs" loading="lazy"></iframe></div>
+        <div class="work-info"><p class="work-tag">Modelado · Animación</p><p class="work-title">Personaje Rafiy</p></div>
+      </div>
+      <div class="work-item fade-in">
+        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/15GQ1AInk1g" loading="lazy"></iframe></div>
+        <div class="work-info"><p class="work-tag">Entorno 3D · Blender</p><p class="work-title">Boticario Mágico — Escenario</p></div>
+      </div>
+      <div class="work-item fade-in">
+        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/5_K4tfFlF5Y" loading="lazy"></iframe></div>
+        <div class="work-info"><p class="work-tag">Animación · Walk Cycle</p><p class="work-title">Walk Cycle — Blender</p></div>
+      </div>
+      <div class="work-item fade-in">
+        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/3B5BMSgJtM4" loading="lazy"></iframe></div>
+        <div class="work-info"><p class="work-tag">Postproducción · After Effects</p><p class="work-title">Intro Enurse</p></div>
+      </div>
+      <div class="work-item fade-in">
+        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/xmFuLzjlRq4" loading="lazy"></iframe></div>
+        <div class="work-info"><p class="work-tag">Dirección · Spot</p><p class="work-title">Spot Podcasts</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre-mi">
+  <div class="container">
+    <p class="section-label fade-in">Sobre mí</p>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <h2>El cine<br>como <em style="font-family:'DM Serif Display',serif;font-style:italic;color:var(--teal)">lenguaje</em></h2>
+        <p>Empecé contando historias con una cámara. Años después, sigo haciéndolo — solo que ahora también con vértices, rigging y renders.</p>
+        <p>Mi formación en dirección cinematográfica en la Escuela TAI y años de trabajo en producción audiovisual me dieron algo que no enseñan en los cursos de 3D: saber qué hace que una imagen tenga peso emocional.</p>
+        <p>Hoy combino esa base con especialización en animación 3D (RTVE Instituto) y creación de personajes (La Tecnocreativa), usando Blender como herramienta principal y Unreal Engine como espacio de exploración.</p>
+      </div>
+      <div class="fade-in">
+        <div class="skills-cols">
+          <div><p class="skill-group-title">Herramientas 3D</p><ul class="skill-list"><li>Blender</li><li>Substance Painter</li><li>ZBrush</li><li>Unreal Engine</li></ul></div>
+          <div><p class="skill-group-title">Edición & Post</p><ul class="skill-list"><li>Premiere Pro</li><li>After Effects</li><li>DaVinci Resolve</li><li>Motion Graphics</li></ul></div>
+          <div><p class="skill-group-title">Disciplinas</p><ul class="skill-list"><li>Animación 3D</li><li>Modelado</li><li>Rigging</li><li>Texturizado</li></ul></div>
+          <div><p class="skill-group-title">Dirección</p><ul class="skill-list"><li>Narrativa visual</li><li>Dirección actores</li><li>Guion</li><li>Composición</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="container">
+    <p class="section-label fade-in">Trayectoria</p>
+    <h2 class="fade-in">Experiencia</h2>
+    <div class="exp-list">
+      <div class="exp-item fade-in">
+        <p class="exp-period">Mar 2021 — Actualidad</p>
+        <div><p class="exp-role">Realizador y Editor Audiovisual</p><p class="exp-company">FUDEN — Fundación para el Desarrollo de la Enfermería · Madrid</p><p class="exp-desc">Dirección técnica y artística de piezas formativas y contenido corporativo. Gestión integral de postproducción y Motion Graphics. Liderazgo en narrativa visual para comunicar conceptos médicos complejos.</p></div>
+      </div>
+      <div class="exp-item fade-in">
+        <p class="exp-period">2017 — 2021</p>
+        <div><p class="exp-role">Filmmaker & Director Creativo</p><p class="exp-company">Ant Producciones · Madrid</p><p class="exp-desc">Responsable del ciclo completo de producción: guion, rodaje, dirección de actores y montaje. Creación de spots publicitarios y videoclips con estética cinematográfica.</p></div>
+      </div>
+      <div class="exp-item fade-in">
+        <p class="exp-period">2024 — 2025</p>
+        <div><p class="exp-role">Especialización en Animación 3D</p><p class="exp-company">RTVE Instituto</p><p class="exp-desc">Formación especializada en animación de personajes, rigging, render y pipeline de producción 3D.</p></div>
+      </div>
+      <div class="exp-item fade-in">
+        <p class="exp-period">2023 — 2024</p>
+        <div><p class="exp-role">Máster en Creación de Personajes 3D</p><p class="exp-company">La Tecnocreativa</p><p class="exp-desc">Modelado orgánico, escultura digital, texturizado con Substance y flujo de trabajo completo de personaje 3D.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <p class="section-label" style="justify-content:center">Contacto</p>
+    <h2>¿Trabajamos juntos?</h2>
+    <p class="sub">Disponible para proyectos freelance y oportunidades profesionales.</p>
+    <div class="contact-links">
+      <a href="mailto:arceogabriel07@gmail.com" class="btn btn-primary">arceogabriel07@gmail.com</a>
+      <a href="https://www.linkedin.com/in/gabriel-alejandro-alcacer-390a018b" class="btn btn-ghost" target="_blank">LinkedIn</a>
+      <a href="https://gabrielalcacer.github.io/CV_Gabriel_Alcacer.pdf" class="btn btn-ghost" download>Descargar CV</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Gabriel Alcacer — 3D Artist & Video Editor · Madrid</footer>
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.reel-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  event.target.classList.add('active');
 }
-
-window.updateResult=function(id){
-  const m=STATE.matches.find(x=>x.id===id);
-  if(!m)return;
-  m.homeGoals=document.getElementById('ah-'+id)?.value||'';
-  m.awayGoals=document.getElementById('aa-'+id)?.value||'';
-};
-window.togglePlayed=async function(id){
-  const m=STATE.matches.find(x=>x.id===id);
-  if(!m)return;
-  if(!m.played){
-    if(m.homeGoals===''||m.awayGoals===''){alert('Introduce el marcador primero');return;}
-    m.played=true;
-  }else{m.played=false;}
-  await saveMatches();
-  toast(m.played?'Resultado confirmado ✓':'Resultado reabierto');
-  renderAdminMatches();renderRanking('ad-rkl');
-};
-
-window.addPlayer=async function(){
-  const n=document.getElementById('np').value.trim();
-  if(!n){alert('Escribe un nombre');return;}
-  if(STATE.players[n]){alert('Ya existe');return;}
-  STATE.players[n]={picks:{},special:{champion:'',scorer:''}};
-  await savePlayer(n);
-  document.getElementById('np').value='';
-  toast(`${n} añadido ✓`);
-  renderPlayersList();populateSel();
-};
-window.removePlayer=async function(name){
-  if(!confirm('¿Eliminar a '+name+'?'))return;
-  delete STATE.players[name];
-  await deleteDoc(doc(db,'players',name));
-  renderPlayersList();populateSel();
-};
-function renderPlayersList(){
-  const el=document.getElementById('pl-list');
-  const players=Object.keys(STATE.players);
-  if(!players.length){el.innerHTML='<p class="muted">Sin participantes.</p>';return;}
-  let html='<table><thead><tr><th>Nombre</th><th>Picks</th><th>Pts</th><th></th></tr></thead><tbody>';
-  players.forEach(p=>{
-    const picks=Object.keys(STATE.players[p]?.picks||{}).length;
-    const pts=calcPts(p).total;
-    html+=`<tr><td>${p}</td><td>${picks}</td><td><strong>${pts}</strong></td><td><button class="btn-sm" onclick="removePlayer('${p}')"><i class="ti ti-trash"></i></button></td></tr>`;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); observer.unobserve(e.target); }
   });
-  html+='</tbody></table>';
-  el.innerHTML=html;
-}
-window.saveRealSpecial=async function(){
-  STATE.realSpecial.champion=document.getElementById('ad-rc').value;
-  STATE.realSpecial.scorer=document.getElementById('ad-rs').value;
-  await saveSpecialReal();toast('Guardado ✓');renderRanking('ad-rkl');
-};
-
-function populateSel(){
-  const sel=document.getElementById('login-select');
-  const cur=sel.value;
-  sel.innerHTML='<option value="">Selecciona...</option>';
-  Object.keys(STATE.players).sort().forEach(p=>sel.add(new Option(p,p)));
-  if(cur)sel.value=cur;
-}
-
-loadFromFirebase();
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
