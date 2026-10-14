@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gabriel Alcacer — 3D Artist & Video Editor</title>
+<title>Gabriel Alcacer — 3D Artist & Realizador Audiovisual</title>
+<meta name="description" content="Realizador audiovisual y 3D artist en Madrid. Narrativa cinematográfica, animación de personajes y motion graphics con Blender, Unreal y After Effects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -13,7 +14,7 @@
   body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 3rem; background: rgba(12,15,14,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--teal); letter-spacing: 0.04em; text-decoration: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; }
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--teal); }
   .hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 3rem 4rem; position: relative; overflow: hidden; }
@@ -23,7 +24,8 @@
   .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--teal); }
   h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1.5rem; }
   h1 em { font-style: italic; color: var(--teal); }
-  .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-desc strong { font-weight: 500; color: var(--text); }
   .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
   .btn-primary { background: var(--teal); color: #0c0f0e; }
@@ -33,12 +35,13 @@
   .hero-stats { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
   .stat-item { background: var(--surface); padding: 1.5rem 1.75rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
   .stat-number { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--teal); line-height: 1; }
-  .stat-label { font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; text-align: right; line-height: 1.3; max-width: 140px; }
+  .stat-label { font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; text-align: right; line-height: 1.3; max-width: 170px; }
   section { padding: 6rem 3rem; }
   .container { max-width: 1100px; margin: 0 auto; }
   .section-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
   .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--teal); }
   h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.15; margin-bottom: 3rem; color: var(--text); }
+  h2 em { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--teal); }
   #reels { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .reels-tabs { display: flex; gap: 0; margin-bottom: 2rem; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; width: fit-content; }
   .tab-btn { padding: 0.65rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; color: var(--text-muted); border: none; cursor: pointer; transition: all 0.2s; }
@@ -50,14 +53,21 @@
   .reel-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
   .reel-desc { margin-top: 1rem; font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.05em; }
   #trabajos { background: var(--bg); }
-  .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
   .work-item { background: var(--surface); overflow: hidden; transition: background 0.2s; }
   .work-item:hover { background: var(--surface2); }
-  .work-thumb { position: relative; padding-bottom: 56.25%; background: #111; }
-  .work-thumb iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; }
-  .work-info { padding: 1rem 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+  .work-thumb { position: relative; padding-bottom: 56.25%; background: #111; cursor: pointer; }
+  .work-thumb img, .work-thumb iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; object-fit: cover; }
+  .work-thumb button { position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(12,15,14,0.25); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+  .work-thumb:hover button { background: rgba(12,15,14,0.05); }
+  .play-icon { width: 58px; height: 58px; border-radius: 50%; background: rgba(12,15,14,0.7); border: 1px solid var(--teal); display: flex; align-items: center; justify-content: center; }
+  .play-icon::after { content: ''; margin-left: 4px; border-style: solid; border-width: 9px 0 9px 15px; border-color: transparent transparent transparent var(--teal); }
+  .work-info { padding: 1.1rem 1.25rem 1.4rem; border-top: 1px solid var(--border); }
   .work-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.3rem; }
-  .work-title { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+  .work-title { font-size: 1rem; font-weight: 500; color: var(--text); margin-bottom: 0.4rem; }
+  .work-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.7rem; }
+  .work-meta { font-size: 0.76rem; color: var(--text-dim); letter-spacing: 0.04em; }
+  .work-meta b { font-weight: 500; color: var(--text-muted); }
   #sobre-mi { background: var(--surface); border-top: 1px solid var(--border); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
   .about-text p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.25rem; line-height: 1.85; }
@@ -67,6 +77,7 @@
   .skill-list li { font-size: 0.88rem; color: var(--text-muted); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; gap: 0.5rem; }
   .skill-list li::before { content: ''; width: 4px; height: 4px; background: var(--teal-dim); border-radius: 50%; flex-shrink: 0; }
   #experiencia { background: var(--bg); }
+  #formacion { background: var(--surface); border-top: 1px solid var(--border); }
   .exp-list { display: flex; flex-direction: column; }
   .exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
   .exp-item:first-child { border-top: 1px solid var(--border); }
@@ -74,13 +85,20 @@
   .exp-role { font-weight: 500; font-size: 1rem; margin-bottom: 0.2rem; }
   .exp-company { color: var(--teal); font-size: 0.88rem; margin-bottom: 0.75rem; }
   .exp-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
-  #contacto { background: var(--surface); border-top: 1px solid var(--border); text-align: center; }
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-top: 3rem; }
+  .cert { background: var(--bg); padding: 1.25rem 1.4rem; }
+  .cert-date { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.3rem; }
+  .cert-name { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.35; margin-bottom: 0.2rem; }
+  .cert-org { font-size: 0.82rem; color: var(--teal); }
+  .sub-title { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin: 3.5rem 0 0; }
+  #contacto { background: var(--bg); border-top: 1px solid var(--border); text-align: center; }
   #contacto h2 { margin-bottom: 0.75rem; }
   #contacto .sub { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1rem; }
   .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
   footer { padding: 2rem 3rem; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.78rem; letter-spacing: 0.06em; }
   .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 900px) { .nav-links { gap: 1.25rem; } }
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
     .hero { padding: 5rem 1.5rem 3rem; } .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -97,6 +115,7 @@
     <li><a href="#trabajos">Trabajos</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#formacion">Formación</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
@@ -105,7 +124,7 @@
     <div>
       <p class="hero-eyebrow">Madrid, España</p>
       <h1>Gabriel<br><em>Alcacer</em></h1>
-      <p class="hero-desc">Realizador Audiovisual con más de 5 años de experiencia.<br>Especializado en fusionar la <strong style="font-weight:500;color:var(--text)">narrativa cinematográfica</strong> con la animación 3D en Blender.</p>
+      <p class="hero-desc">Realizador audiovisual y 3D artist. Llevo una pieza <strong>del guion al render</strong>: dirijo, animo personajes en Blender y cierro con montaje y motion graphics, siempre con una idea de narrativa cinematográfica detrás.</p>
       <div class="btn-group">
         <a href="#reels" class="btn btn-primary">Ver Reels</a>
         <a href="https://gabrielalcacer.github.io/CV_Gabriel_Alcacer.pdf" class="btn btn-ghost" download>Descargar CV</a>
@@ -113,9 +132,9 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item"><span class="stat-number">5+</span><span class="stat-label">años de experiencia audiovisual</span></div>
-      <div class="stat-item"><span class="stat-number">3D</span><span class="stat-label">Blender · Substance · Unreal</span></div>
-      <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Másters especializados en 3D</span></div>
-      <div class="stat-item"><span class="stat-number">∞</span><span class="stat-label">Historias por contar</span></div>
+      <div class="stat-item"><span class="stat-number">3D</span><span class="stat-label">Blender · Substance · Unreal · Character Creator</span></div>
+      <div class="stat-item"><span class="stat-number">TV</span><span class="stat-label">Equipo de dirección en serie de ficción</span></div>
+      <div class="stat-item"><span class="stat-number">2026</span><span class="stat-label">Formación continua en animación y cine en Blender</span></div>
     </div>
   </div>
 </section>
@@ -125,18 +144,18 @@
     <p class="section-label fade-in">Showreel</p>
     <h2 class="fade-in">Reels</h2>
     <div class="reels-tabs fade-in">
-      <button class="tab-btn active" onclick="switchTab('3d')">3D & Motion Graphics</button>
-      <button class="tab-btn" onclick="switchTab('av')">Audiovisual</button>
+      <button class="tab-btn active" onclick="switchTab('3d', this)">3D & Motion Graphics</button>
+      <button class="tab-btn" onclick="switchTab('av', this)">Audiovisual</button>
     </div>
     <div id="panel-3d" class="reel-panel active fade-in">
       <div class="reel-wrapper">
-        <iframe src="https://www.youtube.com/embed/5S6wirKFT_s" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/5S6wirKFT_s" title="Reel 3D y Motion Graphics" allowfullscreen loading="lazy"></iframe>
       </div>
-      <p class="reel-desc">Blender · Motion Graphics · Character Art · Environment · Lighting</p>
+      <p class="reel-desc">Blender · Unreal Engine · Character Creator · Motion Graphics · Lighting</p>
     </div>
     <div id="panel-av" class="reel-panel fade-in">
       <div class="reel-wrapper">
-        <iframe src="https://www.youtube.com/embed/x7fCFncXKSU" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed/x7fCFncXKSU" title="Reel Audiovisual" allowfullscreen loading="lazy"></iframe>
       </div>
       <p class="reel-desc">Dirección · Edición · Postproducción · Spots · Cortometraje</p>
     </div>
@@ -149,28 +168,28 @@
     <h2 class="fade-in">Trabajos Destacados</h2>
     <div class="works-grid">
       <div class="work-item fade-in">
-        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/uCiACHimSWY" loading="lazy"></iframe></div>
-        <div class="work-info"><p class="work-tag">Animación 3D · Blender</p><p class="work-title">Animación de Personaje</p></div>
+        <div class="work-thumb" data-yt="uCiACHimSWY"></div>
+        <div class="work-info"><p class="work-tag">Animación 3D · Blender</p><p class="work-title">Animación de Personaje</p><p class="work-desc">Animación de acción completa de un personaje, realizada de principio a fin.</p><p class="work-meta"><b>Rol:</b> Animación · <b>Software:</b> Blender</p></div>
       </div>
       <div class="work-item fade-in">
-        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/Tcq2NvWVifs" loading="lazy"></iframe></div>
-        <div class="work-info"><p class="work-tag">Modelado · Animación</p><p class="work-title">Personaje Rafiy</p></div>
+        <div class="work-thumb" data-yt="Tcq2NvWVifs"></div>
+        <div class="work-info"><p class="work-tag">Modelado · Sculpting</p><p class="work-title">Personaje Rafiy</p><p class="work-desc">Trabajo final de máster: el modelo completo del personaje, esculpido por mí de principio a fin.</p><p class="work-meta"><b>Rol:</b> Modelado y sculpting · <b>Software:</b> Blender</p></div>
       </div>
       <div class="work-item fade-in">
-        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/15GQ1AInk1g" loading="lazy"></iframe></div>
-        <div class="work-info"><p class="work-tag">Entorno 3D · Blender</p><p class="work-title">Boticario Mágico — Escenario</p></div>
+        <div class="work-thumb" data-yt="15GQ1AInk1g"></div>
+        <div class="work-info"><p class="work-tag">Entorno 3D · Blender</p><p class="work-title">Boticario Mágico — Escenario</p><p class="work-desc">Trabajo final de máster: modelado y texturizado completos, combinando 3D con la técnica 2D de Blender.</p><p class="work-meta"><b>Rol:</b> Modelado y texturizado · <b>Software:</b> Blender</p></div>
       </div>
       <div class="work-item fade-in">
-        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/5_K4tfFlF5Y" loading="lazy"></iframe></div>
-        <div class="work-info"><p class="work-tag">Animación · Walk Cycle</p><p class="work-title">Walk Cycle — Blender</p></div>
+        <div class="work-thumb" data-yt="5_K4tfFlF5Y"></div>
+        <div class="work-info"><p class="work-tag">Animación · Walk Cycle</p><p class="work-title">Walk Cycle — Blender</p><p class="work-desc">Trabajo de máster: ciclo de caminata animado por completo.</p><p class="work-meta"><b>Rol:</b> Animación · <b>Software:</b> Blender</p></div>
       </div>
       <div class="work-item fade-in">
-        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/3B5BMSgJtM4" loading="lazy"></iframe></div>
-        <div class="work-info"><p class="work-tag">Postproducción · After Effects</p><p class="work-title">Intro Enurse</p></div>
+        <div class="work-thumb" data-yt="3B5BMSgJtM4"></div>
+        <div class="work-info"><p class="work-tag">Motion Graphics · After Effects</p><p class="work-title">Intro Enurse</p><p class="work-desc">Intro en motion graphics para una sección informativa de FUDEN, animada por completo.</p><p class="work-meta"><b>Rol:</b> Motion graphics y animación · <b>Software:</b> After Effects</p></div>
       </div>
       <div class="work-item fade-in">
-        <div class="work-thumb"><iframe src="https://www.youtube.com/embed/xmFuLzjlRq4" loading="lazy"></iframe></div>
-        <div class="work-info"><p class="work-tag">Dirección · Spot</p><p class="work-title">Spot Podcasts</p></div>
+        <div class="work-thumb" data-yt="xmFuLzjlRq4"></div>
+        <div class="work-info"><p class="work-tag">Dirección · Spot</p><p class="work-title">Spot Podcasts</p><p class="work-desc">Intro para un podcast: dirección y producción del spot, con animación en After Effects y montaje en Premiere.</p><p class="work-meta"><b>Rol:</b> Dirección, producción y edición · <b>Software:</b> After Effects, Premiere Pro</p></div>
       </div>
     </div>
   </div>
@@ -181,17 +200,17 @@
     <p class="section-label fade-in">Sobre mí</p>
     <div class="about-grid">
       <div class="about-text fade-in">
-        <h2>El cine<br>como <em style="font-family:'DM Serif Display',serif;font-style:italic;color:var(--teal)">lenguaje</em></h2>
+        <h2>El cine<br>como <em>lenguaje</em></h2>
         <p>Empecé contando historias con una cámara. Años después, sigo haciéndolo — solo que ahora también con vértices, rigging y renders.</p>
         <p>Mi formación en dirección cinematográfica en la Escuela TAI y años de trabajo en producción audiovisual me dieron algo que no enseñan en los cursos de 3D: saber qué hace que una imagen tenga peso emocional.</p>
-        <p>Hoy combino esa base con especialización en animación 3D (RTVE Instituto) y creación de personajes (La Tecnocreativa), usando Blender como herramienta principal y Unreal Engine como espacio de exploración.</p>
+        <p>Hoy combino esa base con especialización en animación 3D (RTVE Instituto) y creación de personajes (La Tecnocreativa), usando Blender como herramienta principal, Unreal Engine y Character Creator 4 para producción de personajes y tiempo real.</p>
       </div>
       <div class="fade-in">
         <div class="skills-cols">
-          <div><p class="skill-group-title">Herramientas 3D</p><ul class="skill-list"><li>Blender</li><li>Substance Painter</li><li>ZBrush</li><li>Unreal Engine</li></ul></div>
-          <div><p class="skill-group-title">Edición & Post</p><ul class="skill-list"><li>Premiere Pro</li><li>After Effects</li><li>DaVinci Resolve</li><li>Motion Graphics</li></ul></div>
-          <div><p class="skill-group-title">Disciplinas</p><ul class="skill-list"><li>Animación 3D</li><li>Modelado</li><li>Rigging</li><li>Texturizado</li></ul></div>
-          <div><p class="skill-group-title">Dirección</p><ul class="skill-list"><li>Narrativa visual</li><li>Dirección actores</li><li>Guion</li><li>Composición</li></ul></div>
+          <div><p class="skill-group-title">Herramientas 3D</p><ul class="skill-list"><li>Blender</li><li>Unreal Engine</li><li>Character Creator 4</li><li>Substance Painter</li><li>ZBrush</li></ul></div>
+          <div><p class="skill-group-title">Edición & Post</p><ul class="skill-list"><li>Premiere Pro</li><li>After Effects</li><li>DaVinci Resolve</li><li>Motion Graphics</li><li>Color Grading</li></ul></div>
+          <div><p class="skill-group-title">Disciplinas</p><ul class="skill-list"><li>Animación 3D</li><li>Modelado y escultura</li><li>Rigging</li><li>Texturizado</li><li>Iluminación y render</li></ul></div>
+          <div><p class="skill-group-title">Dirección</p><ul class="skill-list"><li>Narrativa visual</li><li>Dirección de actores</li><li>Guion</li><li>Composición</li></ul></div>
         </div>
       </div>
     </div>
@@ -205,20 +224,53 @@
     <div class="exp-list">
       <div class="exp-item fade-in">
         <p class="exp-period">Mar 2021 — Actualidad</p>
-        <div><p class="exp-role">Realizador y Editor Audiovisual</p><p class="exp-company">FUDEN — Fundación para el Desarrollo de la Enfermería · Madrid</p><p class="exp-desc">Dirección técnica y artística de piezas formativas y contenido corporativo. Gestión integral de postproducción y Motion Graphics. Liderazgo en narrativa visual para comunicar conceptos médicos complejos.</p></div>
+        <div><p class="exp-role">Realizador y Editor Audiovisual</p><p class="exp-company">FUDEN — Fundación para el Desarrollo de la Enfermería · Madrid</p><p class="exp-desc">Grabación y edición de contenido formativo, eventos en directo, shows y podcasts corporativos. Gestión integral de postproducción y motion graphics en After Effects. Narrativa visual para comunicar conceptos médicos complejos.</p></div>
       </div>
       <div class="exp-item fade-in">
         <p class="exp-period">2017 — 2021</p>
-        <div><p class="exp-role">Filmmaker & Director Creativo</p><p class="exp-company">Ant Producciones · Madrid</p><p class="exp-desc">Responsable del ciclo completo de producción: guion, rodaje, dirección de actores y montaje. Creación de spots publicitarios y videoclips con estética cinematográfica.</p></div>
+        <div><p class="exp-role">Filmmaker & Director Creativo</p><p class="exp-company">Ant Producciones · Madrid</p><p class="exp-desc">Ciclo completo de producción: guion, casting, rodaje, dirección de actores y montaje. Spots publicitarios, videoclips y piezas con estética cinematográfica.</p></div>
       </div>
       <div class="exp-item fade-in">
+        <p class="exp-period">2016 — 2021</p>
+        <div><p class="exp-role">Director Creativo</p><p class="exp-company">4 escenas · Madrid</p><p class="exp-desc">Dirección creativa de las sesiones del programa Backstage.</p></div>
+      </div>
+      <div class="exp-item fade-in">
+        <p class="exp-period">Oct — Nov 2016</p>
+        <div><p class="exp-role">Auxiliar de Dirección</p><p class="exp-company">Gossip Production · Madrid</p><p class="exp-desc">Equipo de dirección en la serie de ficción «Yo quisiera» (temporada 2), con rodaje de alto ritmo para televisión.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="container">
+    <p class="section-label fade-in">Aprendizaje</p>
+    <h2 class="fade-in">Formación</h2>
+    <div class="exp-list">
+      <div class="exp-item fade-in">
         <p class="exp-period">2024 — 2025</p>
-        <div><p class="exp-role">Especialización en Animación 3D</p><p class="exp-company">RTVE Instituto</p><p class="exp-desc">Formación especializada en animación de personajes, rigging, render y pipeline de producción 3D.</p></div>
+        <div><p class="exp-role">Animación 3D · Diseño y modelado para animación</p><p class="exp-company">RTVE Instituto</p><p class="exp-desc">Especialización en animación de personajes, rigging, render y pipeline de producción 3D.</p></div>
       </div>
       <div class="exp-item fade-in">
         <p class="exp-period">2023 — 2024</p>
-        <div><p class="exp-role">Máster en Creación de Personajes 3D</p><p class="exp-company">La Tecnocreativa</p><p class="exp-desc">Modelado orgánico, escultura digital, texturizado con Substance y flujo de trabajo completo de personaje 3D.</p></div>
+        <div><p class="exp-role">Máster en Creación de Personajes, Skins y Producción 3D</p><p class="exp-company">La Tecnocreativa</p><p class="exp-desc">Modelado orgánico, escultura digital, texturizado con Substance y flujo de trabajo completo de personaje 3D.</p></div>
       </div>
+      <div class="exp-item fade-in">
+        <p class="exp-period">2014 — 2015</p>
+        <div><p class="exp-role">Máster en Cinematografía y Producción de Cine y Vídeo</p><p class="exp-company">Master D</p><p class="exp-desc">Dirección cinematográfica, producción y realización de cine y vídeo.</p></div>
+      </div>
+      <div class="exp-item fade-in">
+        <p class="exp-period">2015 — 2016</p>
+        <div><p class="exp-role">Máster en Dirección Cinematográfica</p><p class="exp-company">Escuela TAI</p><p class="exp-desc">Dirección de cine: puesta en escena, dirección de actores y narrativa audiovisual.</p></div>
+      </div>
+    </div>
+
+    <p class="sub-title fade-in">Certificaciones 2026</p>
+    <div class="cert-grid fade-in">
+      <div class="cert"><p class="cert-date">Ago 2026</p><p class="cert-name">Master Cinematic Storytelling in Blender</p><p class="cert-org">CG Boost Academy</p></div>
+      <div class="cert"><p class="cert-date">Jul 2026</p><p class="cert-name">Magic Storybook</p><p class="cert-org">CG Boost Academy</p></div>
+      <div class="cert"><p class="cert-date">Jul 2026</p><p class="cert-name">Master 3D Sculpting in Blender</p><p class="cert-org">CG Boost Academy</p></div>
+      <div class="cert"><p class="cert-date">Jul 2026</p><p class="cert-name">Animation Course</p><p class="cert-org">TOAnimate</p></div>
     </div>
   </div>
 </section>
@@ -230,19 +282,27 @@
     <p class="sub">Disponible para proyectos freelance y oportunidades profesionales.</p>
     <div class="contact-links">
       <a href="mailto:arceogabriel07@gmail.com" class="btn btn-primary">arceogabriel07@gmail.com</a>
-      <a href="https://www.linkedin.com/in/gabriel-alejandro-alcacer-390a018b" class="btn btn-ghost" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/gabriel-alejandro-alcacer-390a018b" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://gabrielalcacer.github.io/CV_Gabriel_Alcacer.pdf" class="btn btn-ghost" download>Descargar CV</a>
     </div>
   </div>
 </section>
-<footer>© 2026 Gabriel Alcacer — 3D Artist & Video Editor · Madrid</footer>
+<footer>© 2026 Gabriel Alcacer — 3D Artist & Realizador Audiovisual · Madrid</footer>
 <script>
-function switchTab(tab) {
+function switchTab(tab, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.reel-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('panel-' + tab).classList.add('active');
-  event.target.classList.add('active');
+  btn.classList.add('active');
 }
+// Miniaturas de YouTube que cargan el reproductor solo al hacer clic
+document.querySelectorAll('.work-thumb[data-yt]').forEach(el => {
+  const id = el.dataset.yt;
+  el.innerHTML = '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="" loading="lazy"><button type="button" aria-label="Reproducir vídeo"><span class="play-icon"></span></button>';
+  el.addEventListener('click', () => {
+    el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+  }, { once: true });
+});
 const observer = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); observer.unobserve(e.target); }
