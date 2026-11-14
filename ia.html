@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo trabajo con IA — Gabriel Alcacer</title>
+<meta name="description" content="IA generativa y agéntica: Claude Code, Antigravity, ComfyUI, addons y pipelines propios.">
+<meta property="og:title" content="Cómo trabajo con IA — Gabriel Alcacer">
+<meta property="og:description" content="IA generativa y agéntica: Claude Code, Antigravity, ComfyUI, addons y pipelines propios.">
+<meta property="og:image" content="media/hero.jpg">
+<link rel="icon" href="media/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="./" aria-label="Gabriel Alcacer">
+    <!-- Logo "Visor": encuadre de cámara + GA -->
+    <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#dcae97" stroke-width="2.4"><path d="M18 12h-6v6M46 12h6v6M18 52h-6v-6M46 52h6v-6"/></g><text x="32" y="41" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="25" fill="#ecebe8">G<tspan font-style="italic" fill="#dcae97">A</tspan></text></svg>
+    Gabriel Alcacer
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="./#projects"><span class="es">Proyectos</span><span class="en">Projects</span></a></li>
+      <li><a href="./#work"><span class="es">Trabajos</span><span class="en">Work</span></a></li>
+      <li><a href="ia.html"><span class="es">IA</span><span class="en">AI</span></a></li>
+      <li><a href="./#about"><span class="es">Sobre mí</span><span class="en">About</span></a></li>
+      <li><a href="./#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es">ES</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-top">
+  <div class="wrap">
+    <a class="back" href="./#projects">← <span class="es">Proyectos</span><span class="en">Projects</span></a>
+    <p class="eyebrow"><span class="es">IA generativa y agéntica</span><span class="en">Generative &amp; agentic AI</span></p>
+    <h1 class="serif"><span class="es">Cómo trabajo <i>con IA</i></span><span class="en">How I work <i>with AI</i></span></h1>
+  </div>
+</section>
+<!-- IA -->
+<section id="ai" style="background:var(--bg);border:0;padding-top:0">
+  <div class="wrap">
+    <p class="rv" style="max-width:640px;color:var(--muted);font-size:1.05rem;margin-bottom:3rem"><span class="es">La IA no toma las decisiones: las tomo yo. La uso como un equipo técnico que escribe código, automatiza tareas y genera material bajo mi dirección.</span><span class="en">AI doesn't make the decisions: I do. I use it as a technical crew that writes code, automates tasks and generates material under my direction.</span></p>
+
+    <div class="flow rv">
+      <div class="me"><p class="k">01 · <span class="es">Yo</span><span class="en">Me</span></p><h3 class="serif"><span class="es">Dirección</span><span class="en">Direction</span></h3><p><span class="es">Idea, guion, look, encuadre y criterio. Reviso cada resultado.</span><span class="en">Idea, script, look, framing and judgement. I review every result.</span></p></div>
+      <div><p class="k">02 · <span class="es">Agentes</span><span class="en">Agents</span></p><h3 class="serif">Claude Code · Antigravity</h3><p><span class="es">Escriben scripts y addons, controlan Blender, ComfyUI y After Effects, y se encargan de tareas pesadas de archivos.</span><span class="en">They write scripts and add-ons, drive Blender, ComfyUI and After Effects, and handle heavy file tasks.</span></p></div>
+      <div><p class="k">03 · <span class="es">Generación</span><span class="en">Generation</span></p><h3 class="serif">ComfyUI</h3><p><span class="es">Workflows propios por nodos en una RTX 4090: imagen, vídeo, 3D, máscaras y música.</span><span class="en">Custom node workflows on an RTX 4090: image, video, 3D, masks and music.</span></p></div>
+      <div><p class="k">04 · <span class="es">Acabado</span><span class="en">Finish</span></p><h3 class="serif">Blender · AE</h3><p><span class="es">El oficio de siempre: luz, composición, color y montaje.</span><span class="en">The classic craft: lighting, compositing, colour and edit.</span></p></div>
+    </div>
+
+    <div class="tools">
+      <div class="tool rv">
+        <figure><img src="media/lab_arbol.jpg" alt="" loading="lazy"></figure>
+        <div class="b"><p class="k">Addon · Blender</p><h3>Iratxo Trasmocho</h3><p><span class="es">Generador procedural de hayas trasmochas: fuste, cabeza, ramas en candelabro y raíces que se pegan al terreno. Todo ajustable en vivo con semilla.</span><span class="en">Procedural generator of pollarded beech trees: trunk, head, candelabra branches and roots that hug the terrain. Fully adjustable live, with seeds.</span></p></div>
+      </div>
+      <div class="tool rv">
+        <figure><img src="media/ed_bd2_render.jpg" alt="" loading="lazy"></figure>
+        <div class="b"><p class="k">Pipeline · Python</p><h3><span class="es">Pipeline del FOOH</span><span class="en">FOOH pipeline</span></h3><p><span class="es">Cadena de scripts que monta la escena, proyecta la placa, hornea el polvo y lanza los renders. El fondo se genera en ComfyUI por API (Qwen).</span><span class="en">A chain of scripts that builds the scene, projects the plate, bakes the dust and launches renders. The background is generated in ComfyUI via API (Qwen).</span></p></div>
+      </div>
+      <div class="tool rv">
+        <figure><img src="media/or_bd4_final.jpg" alt="" loading="lazy"></figure>
+        <div class="b"><p class="k">Script · After Effects</p><h3><span class="es">Rótulos automáticos</span><span class="en">Automated titles</span></h3><p><span class="es">Script <code>.jsx</code> que crea y anima los rótulos del reloj sobre la capa elegida, con un mismo estilo en todos.</span><span class="en">A <code>.jsx</code> script that builds and animates the watch titles on the chosen layer, with one consistent style.</span></p></div>
+      </div>
+    </div>
+    <p class="note rv"><span class="es">Trabajo a diario con <strong>Claude Code</strong> (agente de programación) conectado a Blender por MCP y a ComfyUI por API, y con <strong>Antigravity</strong> para lotes de archivos y tareas largas. El código lo escriben los agentes; la dirección, la revisión y el resultado final son míos.</span><span class="en">I work daily with <strong>Claude Code</strong> (a coding agent) connected to Blender via MCP and to ComfyUI via API, and with <strong>Antigravity</strong> for file batches and long tasks. The agents write the code; direction, review and the final result are mine.</span></p>
+  </div>
+</section>
+
+<!-- EN DESARROLLO -->
+<section id="lab" class="bt">
+  <div class="wrap">
+    <div class="s-head rv">
+      <div>
+        <span class="wip"><span class="es">En desarrollo</span><span class="en">Work in progress</span></span>
+        <h2 class="serif"><span class="es">El bosque de los <i>duendes</i></span><span class="en">The <i>goblin</i> forest</span></h2>
+      </div>
+      <p><span class="es">La cámara cruza un hayedo, entra por un hueco en un trasmocho y descubre una ciudad de duendes escondida dentro. Look pintado en Blender (EEVEE). Los árboles salen de mi addon.</span><span class="en">The camera crosses a beech forest, slips through a hollow in a pollarded tree and finds a goblin city hidden inside. Painted look in Blender (EEVEE). The trees come from my own add-on.</span></p>
+    </div>
+    <div class="lab rv">
+      <figure class="big"><img src="media/lab_arbol.jpg" alt="" loading="lazy"><figcaption><span class="es">Trasmocho generado con el addon</span><span class="en">Pollard tree from the add-on</span></figcaption></figure>
+      <figure class="sm"><img src="media/lab_casa.jpg" alt="" loading="lazy"><figcaption><span class="es">Casa de la ciudad · look pintado</span><span class="en">City house · painted look</span></figcaption></figure>
+      <figure class="sm"><img src="media/lab_haz.jpg" alt="" loading="lazy"><figcaption><span class="es">Prueba de luz: el haz entra por el hueco</span><span class="en">Light test: the beam through the hollow</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0"><div class="wrap">
+    <a class="next" href="teatro-real.html"><span><span class="eyebrow"><span class="es">Siguiente proyecto</span><span class="en">Next project</span></span><br><span class="serif">Teatro <i>Real</i></span></span><span class="arr">→</span></a>
+</div></section>
+<!-- CONTACTO -->
+<section id="contact">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
+    <h2 class="serif"><span class="es">¿Hacemos algo <i>juntos</i>?</span><span class="en">Let's make something <i>together</i></span></h2>
+    <p><span class="es">Disponible para proyectos freelance y puestos en remoto o en Madrid.</span><span class="en">Available for freelance projects and remote or Madrid-based roles.</span></p>
+    <div class="btns">
+      <a class="btn btn-a" href="mailto:arceogabriel07@gmail.com">arceogabriel07@gmail.com</a>
+      <a class="btn btn-g" href="https://www.linkedin.com/in/gabriel-alejandro-alcacer-390a018b" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-g" href="CV_Gabriel_Alcacer.pdf" target="_blank" rel="noopener"><span class="es">Descargar CV</span><span class="en">Download CV</span></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Gabriel Alcacer</span><span>Madrid · 3D Artist · VFX · Generative AI</span></div></footer>
+
+
+<!-- Visor de vídeo -->
+<dialog id="lb">
+  <div class="lb">
+    <button class="x" type="button" aria-label="Cerrar / Close">×</button>
+    <video id="lbv" controls playsinline></video>
+    <p class="cap-t" id="lbt"></p>
+  </div>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

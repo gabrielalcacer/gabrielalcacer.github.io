@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Logo A "Visor": esquinas del encuadre de cámara + monograma GA -->
+  <rect width="64" height="64" rx="12" fill="#0a0a0b"/>
+  <g fill="none" stroke="#dcae97" stroke-width="2.4" stroke-linecap="square">
+    <path d="M18 12 h-6 v6"/><path d="M46 12 h6 v6"/><path d="M18 52 h-6 v-6"/><path d="M46 52 h6 v-6"/>
+  </g>
+  <text x="32" y="41" text-anchor="middle" font-family="Instrument Serif, Georgia, 'Times New Roman', serif" font-size="25" fill="#ecebe8">G<tspan font-style="italic" fill="#dcae97">A</tspan></text>
+</svg>
