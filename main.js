@@ -2,6 +2,7 @@
 const WORKS = {
   ed:          {t:'Teatro Real — FOOH', es:'3D · VFX · IA', en:'3D · VFX · AI'},
   orvane:      {t:'Orvane 1822', es:'3D de producto', en:'3D product'},
+  enurse_spot: {t:'e-Nurse', es:'Vídeo con IA · FUDEN', en:'AI video · FUDEN'},
   reel3d:      {t:'Showreel 3D & Motion', es:'Showreel', en:'Showreel', f:'3d', big:1, dur:'0:45',
                 des:'Blender, Unreal, Character Creator, motion graphics e iluminación.', den:'Blender, Unreal, Character Creator, motion graphics and lighting.'},
   reelav:      {t:'Showreel Audiovisual', es:'Showreel', en:'Showreel', f:'dir', big:1, dur:'0:39',

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>e-Nurse — Gabriel Alcacer</title>
+<meta name="description" content="Spot para FUDEN hecho con IA generativa: un personaje coherente en todos los planos, animado con Wan e integrado en After Effects.">
+<meta property="og:title" content="e-Nurse — Gabriel Alcacer">
+<meta property="og:description" content="Spot con IA generativa: personaje coherente, Wan 2.2 e integración en After Effects.">
+<meta property="og:image" content="media/hero.jpg">
+<link rel="icon" href="media/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="./" aria-label="Gabriel Alcacer">
+    <!-- Logo "Visor": encuadre de cámara + GA -->
+    <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#dcae97" stroke-width="2.4"><path d="M18 12h-6v6M46 12h6v6M18 52h-6v-6M46 52h6v-6"/></g><text x="32" y="41" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="25" fill="#ecebe8">G<tspan font-style="italic" fill="#dcae97">A</tspan></text></svg>
+    Gabriel Alcacer
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="./#projects"><span class="es">Proyectos</span><span class="en">Projects</span></a></li>
+      <li><a href="./#work"><span class="es">Trabajos</span><span class="en">Work</span></a></li>
+      <li><a href="ia.html"><span class="es">IA</span><span class="en">AI</span></a></li>
+      <li><a href="./#about"><span class="es">Sobre mí</span><span class="en">About</span></a></li>
+      <li><a href="./#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es">ES</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="page-top">
+  <div class="wrap">
+    <a class="back" href="./#projects">← <span class="es">Proyectos</span><span class="en">Projects</span></a>
+    <div class="case-head">
+      <div><p class="case-n">03 · <span class="es">Vídeo con IA generativa</span><span class="en">Generative AI video</span></p><h1 class="serif">e-<i>Nurse</i></h1></div>
+      <span class="badge"><span class="es">Spot para FUDEN</span><span class="en">Spot for FUDEN</span></span>
+    </div>
+  </div>
+</section>
+<section style="padding-top:0">
+  <div class="wrap">
+      <div class="player rv" data-open="enurse_spot">
+        <video src="media/enurse_spot_loop.mp4" poster="media/enurse_spot.jpg" autoplay muted loop playsinline></video>
+        <span class="btn btn-a play"><span class="tri"></span><span class="es">Ver con sonido</span><span class="en">Watch with sound</span></span>
+      </div>
+      <div class="f-grid">
+        <div class="rv">
+          <p><span class="es">Spot de 66 segundos para FUDEN que presenta e-Nurse, siete cursos online de enfermería digital. Todos los planos con personas están generados con IA.</span><span class="en">A 66-second spot for FUDEN presenting e-Nurse, seven online courses in digital nursing. Every shot with people in it is AI-generated.</span></p>
+          <p><span class="es"><strong>El reto:</strong> que la misma enfermera (cara, uniforme, sin joyas, como pidió el cliente) se mantuviera igual en más de diez planos distintos, y que las tablets y el móvil enseñaran interfaces reales.</span><span class="en"><strong>The challenge:</strong> keep the same nurse (face, uniform, no jewellery, as the client asked) consistent across more than ten different shots, and make the tablets and phone show real interfaces.</span></p>
+          <p><span class="es"><strong>La solución:</strong> creé el personaje en ComfyUI con una hoja de poses y ángulos, generé cada fotograma clave a partir de ella, lo llevé a realismo con Gemini y lo animé con Wan 2.2. En After Effects seguí las pantallas con scripts propios (sin Mocha) e integré las interfaces, la web real en el móvil y los hologramas. El panal de los siete cursos es 3D en Blender. Solo se usaron modelos con licencia comercial.</span><span class="en"><strong>The solution:</strong> I built the character in ComfyUI with a pose and angle sheet, generated every keyframe from it, pushed realism with Gemini and animated with Wan 2.2. In After Effects I tracked the screens with my own scripts (no Mocha) and integrated the interfaces, the real website on the phone and the holograms. The seven-course honeycomb is 3D in Blender. Only commercially licensed models were used.</span></p>
+        </div>
+        <dl class="facts rv">
+          <div><dt><span class="es">Cliente</span><span class="en">Client</span></dt><dd>FUDEN · e-Nurse</dd></div>
+          <div><dt><span class="es">Duración</span><span class="en">Length</span></dt><dd>66 s</dd></div>
+          <div class="full"><dt><span class="es">Mi papel</span><span class="en">My role</span></dt><dd><span class="es">Pipeline de IA, motion graphics, 3D y montaje</span><span class="en">AI pipeline, motion graphics, 3D and edit</span></dd></div>
+          <div class="full"><dt>Software</dt><dd>ComfyUI (Qwen Image Edit, Wan 2.2) · Gemini · Blender · After Effects · Python</dd></div>
+        </dl>
+      </div>
+      <div class="bd">
+        <h4 class="serif rv">Breakdown</h4>
+        <div class="bd-steps">
+          <div class="bd-step rv"><figure><img src="media/en_bd1_hoja.jpg" alt="" loading="lazy"></figure><p class="bd-n">01</p><p class="bd-t"><span class="es">Personaje</span><span class="en">Character</span></p><p class="bd-d"><span class="es">Hoja de personaje en pose T y cuatro ángulos con Qwen Image Edit: la referencia de todo el spot.</span><span class="en">Character sheet in T-pose and four angles with Qwen Image Edit: the reference for the whole spot.</span></p></div>
+          <div class="bd-step rv"><figure><img src="media/en_bd2_qwen.jpg" alt="" loading="lazy"></figure><p class="bd-n">02</p><p class="bd-t"><span class="es">Fotograma clave</span><span class="en">Keyframe</span></p><p class="bd-d"><span class="es">Cada plano se genera con el personaje como referencia, con LoRAs de cámara y de luz para explorar encuadres.</span><span class="en">Each shot is generated with the character as reference, using camera and lighting LoRAs to explore framing.</span></p></div>
+          <div class="bd-step rv"><figure><img src="media/en_bd3_key.jpg" alt="" loading="lazy"></figure><p class="bd-n">03</p><p class="bd-t"><span class="es">Realismo y animación</span><span class="en">Realism and motion</span></p><p class="bd-d"><span class="es">Paso de realismo con Gemini y animación de imagen a vídeo con Wan 2.2. Pantallas en blanco a propósito.</span><span class="en">Realism pass with Gemini and image-to-video animation with Wan 2.2. Screens left blank on purpose.</span></p></div>
+          <div class="bd-step rv"><figure><img src="media/en_bd4_final.jpg" alt="" loading="lazy"></figure><p class="bd-n">04</p><p class="bd-t"><span class="es">Integración</span><span class="en">Integration</span></p><p class="bd-d"><span class="es">Pantallas seguidas con scripts, interfaces, hologramas y rótulos en After Effects.</span><span class="en">Script-tracked screens, interfaces, holograms and titles in After Effects.</span></p></div>
+        </div>
+        <div class="compare rv">
+          <img src="media/en_bd3_key.jpg" alt=""><img class="after" src="media/en_bd4_final.jpg" alt="">
+          <span class="lbl l1"><span class="es">Fotograma IA</span><span class="en">AI keyframe</span></span><span class="lbl l2">Final</span>
+          <div class="bar"></div><div class="knob">⟷</div>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar / Compare">
+        </div>
+      </div>
+
+    <a class="next" href="ia.html">
+      <span><span class="eyebrow"><span class="es">Siguiente</span><span class="en">Next</span></span><br><span class="serif">Cómo trabajo <i>con IA</i></span></span>
+      <span class="arr">→</span>
+    </a>
+  </div>
+</section>
+<!-- CONTACTO -->
+<section id="contact">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
+    <h2 class="serif"><span class="es">¿Hacemos algo <i>juntos</i>?</span><span class="en">Let's make something <i>together</i></span></h2>
+    <p><span class="es">Disponible para proyectos freelance y puestos en remoto o en Madrid.</span><span class="en">Available for freelance projects and remote or Madrid-based roles.</span></p>
+    <div class="btns">
+      <a class="btn btn-a" href="mailto:arceogabriel07@gmail.com">arceogabriel07@gmail.com</a>
+      <a class="btn btn-g" href="https://www.linkedin.com/in/gabriel-alejandro-alcacer-390a018b" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-g" href="CV_Gabriel_Alcacer.pdf" target="_blank" rel="noopener"><span class="es">Descargar CV</span><span class="en">Download CV</span></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Gabriel Alcacer</span><span>Madrid · 3D Artist · VFX · Generative AI</span></div></footer>
+
+
+<!-- Visor de vídeo -->
+<dialog id="lb">
+  <div class="lb">
+    <button class="x" type="button" aria-label="Cerrar / Close">×</button>
+    <video id="lbv" controls playsinline></video>
+    <p class="cap-t" id="lbt"></p>
+  </div>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>
