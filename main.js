@@ -2,7 +2,6 @@
 const WORKS = {
   ed:          {t:'Teatro Real — FOOH', es:'3D · VFX · IA', en:'3D · VFX · AI'},
   orvane:      {t:'Orvane 1822', es:'3D de producto', en:'3D product'},
-  enurse_spot: {t:'e-Nurse', es:'Vídeo con IA · FUDEN', en:'AI video · FUDEN'},
   reel3d:      {t:'Showreel 3D & Motion', es:'Showreel', en:'Showreel', f:'3d', big:1, dur:'0:45',
                 des:'Blender, Unreal, Character Creator, motion graphics e iluminación.', den:'Blender, Unreal, Character Creator, motion graphics and lighting.'},
   reelav:      {t:'Showreel Audiovisual', es:'Showreel', en:'Showreel', f:'dir', big:1, dur:'0:39',
@@ -13,14 +12,12 @@ const WORKS = {
                 des:'Cortometraje de ficción: creación, dirección, producción y montaje.', den:'Fiction short film: created, directed, produced and edited.'},
   rafy:        {t:'Rafy', es:'Personaje 3D', en:'3D character', f:'3d', big:1, dur:'0:10',
                 des:'Personaje esculpido, texturizado y presentado de principio a fin.', den:'Character sculpted, textured and presented end to end.'},
-  enurse:      {t:'Intro e-Nurse', es:'Motion graphics', en:'Motion graphics', f:'motion', dur:'0:08',
-                des:'Intro animada para la sección informativa de FUDEN.', den:'Animated intro for FUDEN\'s news segment.'},
   hygeia:      {t:'Premios Hygeia', es:'Spot · Edición', en:'Spot · Edit', f:'dir', q:1, dur:'0:50',
                 des:'Spot para FUDEN: edición de vídeo.', den:'Spot for FUDEN: video editing.'},
   fukuroshiki: {t:'Fukuroshiki', es:'Spot de producto', en:'Product spot', f:'dir', q:1, dur:'1:25',
                 des:'Spot de producto: dirección, fotografía y montaje.', den:'Product commercial: directing, cinematography and edit.'}
 };
-const ORDER = ['reel3d','reelav','boticario','prisma','rafy','hygeia','fukuroshiki']; // 'enurse' oculto hasta el 20-01-2027 (embargo del proyecto)
+const ORDER = ['reel3d','reelav','boticario','prisma','rafy','hygeia','fukuroshiki']; // e-Nurse oculto hasta el 20-01-2027 (copia en main_con_enurse.js.bak)
 
 /* ---------- Idioma ---------- */
 function setLang(l){
