@@ -223,7 +223,7 @@ dialog::backdrop{background:rgba(0,0,0,.93)}
 }
 
 /* ---------- Tarjetas de proyectos destacados (portada) ---------- */
-.projs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.projs{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 .proj{display:block;text-decoration:none;color:inherit}
 .proj .thumb{aspect-ratio:4/5}
 .proj .thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.85),transparent 55%);z-index:1}
@@ -249,3 +249,15 @@ dialog::backdrop{background:rgba(0,0,0,.93)}
 
 @media (max-width:1000px){ .projs{grid-template-columns:1fr 1fr} }
 @media (max-width:720px){ .projs{grid-template-columns:1fr} .proj .thumb{aspect-ratio:4/5} .page-top{padding:6rem 0 1.5rem} }
+
+/* ---------- Iratxo: pares boceto / modelo ---------- */
+.pieza{padding:2.5rem 0;border-top:1px solid var(--line)}
+.pieza-h{display:grid;grid-template-columns:60px 1fr 1.4fr;gap:1rem;align-items:baseline;margin-bottom:1.2rem}
+.pieza-h .bd-n{margin:0}
+.pieza-h h3{font-size:1.9rem;line-height:1.1}
+.pieza-h p{color:var(--muted);font-size:.92rem}
+.pair{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1rem}
+.pair figure{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:16/9;background:#2a2c30}
+.pair img{width:100%;height:100%;object-fit:cover}
+.pair figcaption{position:absolute;left:.7rem;top:.7rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.6);padding:.25rem .65rem;border-radius:99px}
+@media (max-width:720px){ .pieza-h{grid-template-columns:1fr} .pair{grid-auto-flow:row} }
