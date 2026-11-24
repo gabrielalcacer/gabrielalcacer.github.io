@@ -17,7 +17,7 @@ const WORKS = {
   fukuroshiki: {t:'Fukuroshiki', es:'Spot de producto', en:'Product spot', f:'dir', q:1, dur:'1:25',
                 des:'Spot de producto: dirección, fotografía y montaje.', den:'Product commercial: directing, cinematography and edit.'}
 };
-const ORDER = ['reel3d','reelav','boticario','prisma','rafy','hygeia','fukuroshiki']; // e-Nurse oculto hasta el 20-01-2027 (copia en main_con_enurse.js.bak)
+const ORDER = ['reel3d','reelav','boticario','prisma','rafy','hygeia','fukuroshiki'];
 
 /* ---------- Idioma ---------- */
 function setLang(l){
