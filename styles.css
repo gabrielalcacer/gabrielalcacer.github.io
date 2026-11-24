@@ -223,7 +223,7 @@ dialog::backdrop{background:rgba(0,0,0,.93)}
 }
 
 /* ---------- Tarjetas de proyectos destacados (portada) ---------- */
-.projs{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.projs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .proj{display:block;text-decoration:none;color:inherit}
 .proj .thumb{aspect-ratio:4/5}
 .proj .thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.85),transparent 55%);z-index:1}

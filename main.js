@@ -11,7 +11,7 @@ const WORKS = {
                 des:'Escenario modelado y texturizado combinando 3D con Grease Pencil.', den:'Environment modelled and textured, blending 3D with Grease Pencil.'},
   prisma:      {t:'Prisma', es:'Cortometraje', en:'Short film', f:'dir', big:1, dur:'12:38',
                 des:'Cortometraje de ficción: creación, dirección, producción y montaje.', den:'Fiction short film: created, directed, produced and edited.'},
-  rafy:        {t:'Rafy', es:'Personaje 3D', en:'3D character', f:'3d', dur:'0:10',
+  rafy:        {t:'Rafy', es:'Personaje 3D', en:'3D character', f:'3d', big:1, dur:'0:10',
                 des:'Personaje esculpido, texturizado y presentado de principio a fin.', den:'Character sculpted, textured and presented end to end.'},
   enurse:      {t:'Intro e-Nurse', es:'Motion graphics', en:'Motion graphics', f:'motion', dur:'0:08',
                 des:'Intro animada para la sección informativa de FUDEN.', den:'Animated intro for FUDEN\'s news segment.'},
@@ -20,7 +20,7 @@ const WORKS = {
   fukuroshiki: {t:'Fukuroshiki', es:'Spot de producto', en:'Product spot', f:'dir', q:1, dur:'1:25',
                 des:'Spot de producto: dirección, fotografía y montaje.', den:'Product commercial: directing, cinematography and edit.'}
 };
-const ORDER = ['reel3d','reelav','boticario','prisma','rafy','enurse','hygeia','fukuroshiki'];
+const ORDER = ['reel3d','reelav','boticario','prisma','rafy','hygeia','fukuroshiki']; // 'enurse' oculto hasta el 20-01-2027 (embargo del proyecto)
 
 /* ---------- Idioma ---------- */
 function setLang(l){
